@@ -17,11 +17,11 @@ def add_mark(imagePath, mark, args):
     '''
     添加水印，然后保存图片
     '''
+    name = os.path.basename(imagePath)
     im = Image.open(imagePath)
 
     image = mark(im)
     if image:
-        name = os.path.basename(imagePath)
         if not os.path.exists(args.out):
             os.mkdir(args.out)
 
